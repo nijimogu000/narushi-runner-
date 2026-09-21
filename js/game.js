@@ -997,7 +997,7 @@ function update(dt) {
   if (animTimer > 0.12) { animTimer = 0; animFrame ^= 1; }
 
   // 敵
-    for (const e of stageData.enemies) {
+  for (const e of stageData.enemies) {
     if (!e.alive) continue;
     e.x += e.vx * dt;
 
@@ -1015,6 +1015,17 @@ if (e.x < minX) {
     const ex = e.x+6, ey = e.y+8;
     if (overlaps(p.x+6, p.y+4, 20, 24, ex, ey, 20, 18)) {
       die(); return;
+    }
+  }
+
+  // アイテム取得
+  for (const item of stageData.items) {
+    if (item.collected) continue;
+    if (overlaps(p.x+6, p.y+4, 20, 24, item.x, item.y, 16, 16)) {
+      item.collected = true;
+      itemCount++;
+      popups.push({ x: item.x, y: item.y, life: 0.7, vy: -40 });
+      SFX.item();
     }
   }
 

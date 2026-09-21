@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>為士ランナー</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="game-wrapper" style="position:relative; display:inline-block;">
+  <canvas id="gameCanvas"></canvas>
+  <!-- タイトルロゴ：タイトル画面時のみCanvas上に重ねて表示 -->
+  <img id="title-logo-img" src="" alt="為士ランナー" draggable="false">
+  <!-- COMPLETE.gif：全★取得時にCanvas上に重ねて表示 -->
+  <img id="complete-img" src="" alt="COMPLETE" draggable="false">
+</div>
+
+<!-- ================================================================
+     起動時ポップアップ
+     ================================================================ -->
+<div id="popup-overlay">
+  <div id="popup-box">
+    <h1 id="popup-title">為士ランナー</h1>
+
+    <!-- 二次創作について -->
+    <section class="popup-section">
+      <h2>＜このゲームについて＞</h2>
+      <p>
+      本作はもぐり(<a href="https://twitter.com/Vz6Sc" target="_blank" rel="noopener">@Vz6Sc</a>)による非公式の二次創作ファンゲームです。<br>
+      個人の趣味により創作されたものであり、公式関係者様各位とは一切関係ありません。<br>
+      お祝いとネタを兼ねた個人制作のため、不具合や挙動の荒さなどあっても笑って許してください。<br>
+      バグ報告・デバッグ対応などは行っておりません。<br>
+      <br>
+      為士！誕生日おめでとう！！<br>
+      <br>
+      このゲームではseadenden 8bit freeBGM様の音楽を使用しています。
+      </p>
+    </section>
+
+    <!-- CREDIT -->
+    <section class="popup-section">
+      <h2>＜CREDIT＞</h2>
+      <div class="credit-item">
+        <span class="credit-label">BGM</span><br>
+        <a href="https://seadenden-8bit.com/" target="_blank" rel="noopener noreferrer">seadenden 8bit freeBGM</a>
+      </div>
+      <!-- 今後SEなどを追加する場合はここに追記 -->
+      <!-- <div class="credit-item">
+        <span class="credit-label">SE</span><br>
+        <a href="https://example.com" target="_blank" rel="noopener noreferrer">サイト名</a>
+      </div> -->
+    </section>
+
+    <!-- HOW TO PLAY -->
+    <section class="popup-section">
+      <h2>＜HOW TO PLAY＞</h2>
+      <p>
+        虹顔市を歩き回ってステージに散らばる「美」を集めながら、<br>
+        敵や穴を避けてゴールを目指そう。
+      </p>
+    </section>
+
+    <!-- 操作方法 -->
+<div class="popup-section">＜操作方法＞</div>
+<div class="popup-body">
+  <strong>PC</strong>
+  <table class="control-table">
+    <tr>
+      <td>SPACE / CLICK</td>
+      <td>ジャンプ</td>
+    </tr>
+  </table>
+
+  <strong>スマートフォン</strong>
+  <table class="control-table">
+    <tr>
+      <td>TAP</td>
+      <td>ジャンプ</td>
+    </tr>
+  </table>
+</div>
+    <!-- BGM ON/OFF -->
+    <div id="bgm-toggle-wrap">
+      BGM
+      <button id="bgm-toggle-btn">ON</button>
+    </div>
+
+    <!-- GAME STARTボタン -->
+    <button id="popup-start-btn">GAME START！！</button>
+
+  </div>
+</div>
+
+<script src="js/game.js"></script>
+</body>
+</html>

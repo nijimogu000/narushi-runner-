@@ -3673,10 +3673,11 @@ function drawBG_shitamachi(cx) {
   }
 
 
-  const temples = [
-    900,
-    2300
-  ];
+const temples = [
+  500,
+  900,
+  2300
+];
 
   for (const wx of temples) {
     const sx = Math.floor(px(wx, 0.22, cx));
